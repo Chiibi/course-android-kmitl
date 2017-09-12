@@ -1,15 +1,19 @@
 package kmitl.lab03.chayapol58070026.simplemydot;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 import kmitl.lab03.chayapol58070026.simplemydot.Model.Dot;
+import kmitl.lab03.chayapol58070026.simplemydot.Model.Profile;
 import kmitl.lab03.chayapol58070026.simplemydot.View.DotView;
 
 public class MainActivity extends AppCompatActivity{
@@ -25,6 +29,23 @@ public class MainActivity extends AppCompatActivity{
         dotView = (DotView) findViewById(R.id.dotView);
         dotList = new ArrayList<>();
         randObj = new Random();
+        Button btnOpenActivity = (Button) findViewById(R.id.openActivity);
+
+        final Profile profile = new Profile();
+        profile.setName("Chiibi");
+        profile.setAge(21);
+        profile.setWeight(52.5);
+
+        btnOpenActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,
+                        Main2Activity.class);
+                intent.putExtra("X", 30);
+                intent.putExtra("profileObj", profile);
+                startActivity(intent);
+            }
+        });
     }
 
     public void addDotOnBtnClick(View view) {
@@ -68,4 +89,5 @@ public class MainActivity extends AppCompatActivity{
         dotView.setDotList(dotList);
         dotView.invalidate();
     }
+
 }
