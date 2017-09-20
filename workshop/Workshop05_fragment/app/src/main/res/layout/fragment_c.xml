@@ -1,0 +1,23 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="kmitl.workshop05.chiibi.workshop05_fragment.Fragment.CFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/textViewC"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_green_light"
+        android:gravity="center"
+        android:text="C"
+        android:textAlignment="center"
+        android:textSize="120sp" />
+
+    <Button
+        android:id="@+id/btnCtoA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next" />
+</FrameLayout>
