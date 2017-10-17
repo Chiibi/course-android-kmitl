@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyLazyInstagram</string>
+    <string-array name="acc_array">
+        <item>android</item>
+        <item>nature</item>
+        <item>cartoon</item>
+    </string-array>
+</resources>
