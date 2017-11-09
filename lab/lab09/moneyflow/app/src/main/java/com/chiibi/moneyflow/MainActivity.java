@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtBalance;
     private AlertDialog.Builder builderSingle;
     public static MoneyflowDB moneyflowDB;
+    private int allincome = 0;
 
 
     @Override
@@ -139,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
                     HashMap temp = new HashMap();
                     if (items.getType().equals("income")) {
                         temp.put(TYPE_COLUMN, "+");
-
+                        allincome += Integer.valueOf(items.getAmount());
                         balance += Integer.valueOf(items.getAmount());
 
                     }else{
@@ -150,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
                     temp.put(AMOUNT_COLUMN, items.getAmount());
                     list.add(temp);
                 }
-                ChangeColor(balance, balance);
+                ChangeColor(allincome, balance);
 
                 txtBalance.setText(String.valueOf(balance));
             }
